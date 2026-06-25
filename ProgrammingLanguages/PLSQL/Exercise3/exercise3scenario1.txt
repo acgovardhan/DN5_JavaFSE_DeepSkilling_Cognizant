@@ -1,0 +1,43 @@
+CREATE TABLE accounts(
+    customer_id VARCHAR2(10),
+    customer_name VARCHAR2(50),
+    accountType VARCHAR(2),
+    balance NUMBER
+);
+
+
+INSERT INTO accounts VALUES ('C101', 'Alice',   'SA', 10000);
+INSERT INTO accounts VALUES ('C102', 'Bob',     'FD', 50000);
+INSERT INTO accounts VALUES ('C103', 'Charlie', 'SA', 25000);
+INSERT INTO accounts VALUES ('C104', 'David',   'CA', 15000);
+INSERT INTO accounts VALUES ('C105', 'Emma',    'SA', 30000);
+
+COMMIT;
+
+--original table
+SELECT * FROM accounts;
+
+--procedure for processing interest
+CREATE OR REPLACE PROCEDURE ProcessMonthlyInterest
+AS 
+BEGIN 
+FOR acc IN (select customer_id from accounts where accountType = 'SA')
+LOOP
+	UPDATE accounts
+	SET balance = balance + (balance * 0.01)
+	WHERE customer_id  = acc.customer_id;
+END LOOP;
+END;
+/
+
+--calling procedure
+begin 
+ProcessMonthlyInterest;
+end;
+/
+
+--current table
+select * from accounts;
+
+
+

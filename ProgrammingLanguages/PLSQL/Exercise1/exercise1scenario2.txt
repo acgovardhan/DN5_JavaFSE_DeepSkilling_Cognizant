@@ -1,0 +1,32 @@
+CREATE TABLE customers (
+    customer_id VARCHAR2(10),
+    customer_name VARCHAR2(50),
+    isVIP boolean,
+    balance NUMBER
+);
+
+
+INSERT INTO customers(customer_id, customer_name, balance) VALUES ('C101', 'Alice', 200);
+INSERT INTO customers(customer_id, customer_name, balance) VALUES ('C102', 'Bob', 20000);
+INSERT INTO customers(customer_id, customer_name, balance) VALUES ('C103', 'Charlie', 12000);
+INSERT INTO customers(customer_id, customer_name, balance) VALUES ('C104', 'David', 300);
+INSERT INTO customers(customer_id, customer_name, balance) VALUES ('C105', 'Emma', 500);
+
+COMMIT;
+
+--original table
+SELECT * FROM customers;
+
+--updating vip
+begin 
+    for cust in (select customer_id from customers where balance > 10000)
+    LOOP
+        update customers
+        set isVIP = true
+        where customer_id = cust.customer_id;
+    end loop;
+end;
+/
+
+--updated table
+select * from CUSTOMERS;

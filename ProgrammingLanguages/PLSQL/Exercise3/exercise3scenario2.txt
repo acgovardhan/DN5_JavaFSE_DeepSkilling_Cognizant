@@ -1,0 +1,43 @@
+CREATE TABLE employee(
+    employee_id VARCHAR2(10),
+    employee_name VARCHAR2(50),
+    dept VARCHAR2(10),
+    salary NUMBER
+);
+
+
+INSERT INTO employee VALUES ('E101', 'John',    'IT',      50000);
+INSERT INTO employee VALUES ('E102', 'Sarah',   'IT',      60000);
+INSERT INTO employee VALUES ('E103', 'Michael', 'HR',      45000);
+INSERT INTO employee VALUES ('E104', 'Emma',    'Finance', 70000);
+INSERT INTO employee VALUES ('E105', 'David',   'HR',      55000);
+
+COMMIT;
+
+--original table
+SELECT * FROM employee;
+
+--procedure for adding bonus
+CREATE OR REPLACE PROCEDURE UpdateEmployeeBonus(Dept_var IN VARCHAR2, Bonus_var IN NUMBER)  
+AS 
+BEGIN 
+FOR emp IN (select employee_id from employee where dept = Dept_var)
+LOOP
+	UPDATE employee
+	SET salary = salary + (salary * (Bonus_var/100))
+	WHERE employee_id  = emp.employee_id;
+END LOOP;
+END;
+/
+
+--calling procedure
+begin 
+UpdateEmployeeBonus(Dept_var => 'IT', Bonus_var => 2);
+end;
+/
+
+--current table
+select * from employee;
+
+
+

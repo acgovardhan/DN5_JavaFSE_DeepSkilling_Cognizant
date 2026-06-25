@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.govardhan.AppTest" time="0.038" tests="5" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/govardhan/DeepSkilling/ProgrammingLanguages/TDD/junit-demo/target/test-classes:/home/govardhan/DeepSkilling/ProgrammingLanguages/TDD/junit-demo/target/classes:/home/govardhan/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/govardhan/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.vm.vendor" value="Red Hat, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://www.redhat.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-25-openjdk/lib"/>
+    <property name="sun.java.command" value="/home/govardhan/DeepSkilling/ProgrammingLanguages/TDD/junit-demo/target/surefire/surefirebooter-20260616221538359_3.jar /home/govardhan/DeepSkilling/ProgrammingLanguages/TDD/junit-demo/target/surefire 2026-06-16T22-15-38_286-jvmRun1 surefire-20260616221538359_1tmp surefire_0-20260616221538359_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/govardhan/DeepSkilling/ProgrammingLanguages/TDD/junit-demo/target/test-classes:/home/govardhan/DeepSkilling/ProgrammingLanguages/TDD/junit-demo/target/classes:/home/govardhan/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/govardhan/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/govardhan"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="java.home" value="/usr/lib/jvm/java-25-openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/govardhan/DeepSkilling/ProgrammingLanguages/TDD/junit-demo"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/govardhan/DeepSkilling/ProgrammingLanguages/TDD/junit-demo/target/surefire/surefirebooter-20260616221538359_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25.0.3+9"/>
+    <property name="user.name" value="govardhan"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="7.0.12-201.fc44.x86_64"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="(Red_Hat-25.0.3.0.9-1)"/>
+    <property name="localRepository" value="/home/govardhan/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=java-25-openjdk&amp;version=42"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="25.0.3"/>
+    <property name="user.dir" value="/home/govardhan/DeepSkilling/ProgrammingLanguages/TDD/junit-demo"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Red Hat, Inc."/>
+    <property name="java.vm.version" value="25.0.3+9"/>
+    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="testAdd" classname="com.govardhan.AppTest" time="0.001"/>
+  <testcase name="testSub" classname="com.govardhan.AppTest" time="0.0"/>
+  <testcase name="AssertionTest" classname="com.govardhan.AppTest" time="0.0"/>
+  <testcase name="sampleTest2" classname="com.govardhan.AppTest" time="0.0"/>
+  <testcase name="sampleTest" classname="com.govardhan.AppTest" time="0.0"/>
+</testsuite>

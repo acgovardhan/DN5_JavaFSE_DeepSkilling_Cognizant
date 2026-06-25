@@ -1,0 +1,28 @@
+CREATE TABLE loan(
+    customer_id VARCHAR2(10),
+    customer_name VARCHAR2(50),
+    dueDate DATE,
+    amount NUMBER
+);
+
+
+INSERT INTO loan VALUES ('C101', 'Alice', SYSDATE + 10, 5000);
+INSERT INTO loan VALUES ('C102', 'Bob', SYSDATE + 40, 8000);
+INSERT INTO loan VALUES ('C103', 'Charlie', SYSDATE + 5, 12000);
+INSERT INTO loan VALUES ('C104', 'David', SYSDATE + 60, 3000);
+INSERT INTO loan VALUES ('C105', 'Emma', SYSDATE + 25, 15000);
+
+COMMIT;
+
+--original table
+SELECT * FROM loan;
+
+--print remainder
+begin 
+    for lon in (select customer_id, dueDate from loan where dueDate <= SYSDATE + 30)
+    LOOP
+        dbms_output.put_line('Remainder for ' || lon.customer_id || ': loan due in ' || ROUND(lon.dueDATE - SYSDATE) || ' days..');
+    end loop;
+end;
+/
+

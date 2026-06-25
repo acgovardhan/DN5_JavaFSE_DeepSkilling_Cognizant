@@ -1,0 +1,58 @@
+CREATE TABLE accounts(
+    customer_id VARCHAR2(10),
+    customer_name VARCHAR2(50),
+    accountType VARCHAR(2),
+    balance NUMBER
+);
+
+
+INSERT INTO accounts VALUES ('C101', 'Alice',   'SA', 10000);
+INSERT INTO accounts VALUES ('C102', 'Bob',     'FD', 50000);
+INSERT INTO accounts VALUES ('C103', 'Charlie', 'SA', 25000);
+INSERT INTO accounts VALUES ('C104', 'David',   'CA', 15000);
+INSERT INTO accounts VALUES ('C105', 'Emma',    'SA', 30000);
+
+COMMIT;
+
+--original table
+SELECT * FROM accounts;
+
+--procedure for transfer funds
+CREATE OR REPLACE PROCEDURE TransferFunds(sender_id IN varchar2, receiver_id IN varchar2, amount IN Number)
+AS 
+insufficient_fund EXCEPTION;
+curr_balance Number;
+BEGIN 
+	select balance into curr_balance from accounts where customer_id = sender_id;
+	if (curr_balance - amount) < 0 then
+		raise insufficient_fund;
+	end if;
+	
+	update accounts
+	set balance = balance - amount
+	where customer_id =  sender_id;
+	
+	update accounts 
+	set balance = balance + amount
+	where customer_id = receiver_id;
+	
+	dbms_output.put_line('transfer completed');
+	
+EXCEPTION
+	WHEN insufficient_fund then
+		dbms_output.put_line('insufficient amount ');
+		
+END;
+/
+
+--calling procedure
+begin 
+TransferFunds(sender_id => 'C101', receiver_id => 'C103', amount => 10000);
+end;
+/
+
+--current table
+select * from accounts;
+
+
+

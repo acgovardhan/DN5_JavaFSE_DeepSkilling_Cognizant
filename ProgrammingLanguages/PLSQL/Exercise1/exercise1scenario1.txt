@@ -1,0 +1,32 @@
+CREATE TABLE customers (
+    customer_id VARCHAR2(10),
+    customer_name VARCHAR2(50),
+    age NUMBER,
+    interest_rate NUMBER
+);
+
+
+INSERT INTO customers VALUES ('C101', 'Alice', 65, 8);
+INSERT INTO customers VALUES ('C102', 'Bob', 45, 7);
+INSERT INTO customers VALUES ('C103', 'Charlie', 70, 9);
+INSERT INTO customers VALUES ('C104', 'David', 55, 6);
+INSERT INTO customers VALUES ('C105', 'Emma', 62, 10);
+
+COMMIT;
+
+--original table
+SELECT * FROM customers;
+
+--1% discount
+begin 
+    for cust in (select customer_id from customers where age > 60)
+    LOOP
+        update customers
+        set interest_rate = interest_rate -1
+        where customer_id = cust.customer_id;
+    end loop;
+end;
+/
+
+--updated table
+select * from CUSTOMERS;
